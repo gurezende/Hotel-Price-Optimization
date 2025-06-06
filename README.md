@@ -1,6 +1,6 @@
 # Hotel-Price-Optimization
 Hotel Room Price Optimization with PyGAM
-![](blog2.jpg)
+![](./blog2.jpeg)
 
 PyGAM
 PyGAM is a Python library with an implementation of GAMs.

@@ -2,7 +2,7 @@
 Hotel Room Price Optimization with PyGAM
 ![](./blog2.jpeg)
 
-PyGAM
+## PyGAM
 PyGAM is a Python library with an implementation of GAMs.
 To get started, let's install it using pip:
 pip install pygam
@@ -30,3 +30,10 @@ Max revenue at $154.08. Image by the author.Interpreting the Results
 By examining the GAM model's components, you can understand how each factor influences the optimal price. 
 Change the conditions to gain insights into how to adjust prices based on them. 
 The peak of the prices should be during the Summer for this hotel.
+
+## Known Issues
+PyGAM's last commit was on Feb, 2024. Since then, there is a compatibility issue for newer versions of numpy/ scipy. Here is the fix:
+Manually change line 739 of .venv/Lib/site-packages/pygam/pygam.py to Q, R = np.linalg.qr(WB.toarray()).
+Manually change line 82 of .venv/Lib/site-packages/pygam/utils.py to A = A.toarray().
+There may be more places as well, depending on which models you use. The broad fix is just to replace .A with .toarray() everywhere you get that error.
+For more solutions to this error, refer to the issue #357 in PyGAM's repo.
